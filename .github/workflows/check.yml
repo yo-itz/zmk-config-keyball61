@@ -1,0 +1,10 @@
+name: Check layout design
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  static-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_layout.py
